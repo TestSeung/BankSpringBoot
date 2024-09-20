@@ -8,7 +8,6 @@ public class Customer {
     private int myNumber;
 
 
-
     private int wallet;
     private BankName bankName;
     private Banking banking;
@@ -18,6 +17,7 @@ public class Customer {
         this.wallet -= money;
         return money;
     }
+
     //출금
     public int withdraw(int money) {
         this.wallet += money;
@@ -28,7 +28,7 @@ public class Customer {
 //        this.money -= money;
 //    }
 
-    public Customer(String name, int age, int wallet,BankName bankName) {
+    public Customer(String name, int age, int wallet, BankName bankName) {
         this.myNumber = serialNumber++;
         this.name = name;
         this.age = age;

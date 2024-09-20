@@ -25,26 +25,26 @@ public class BankSimulator {
 
         //대기
         List<Customer> customers = Arrays.asList(
-                new Customer("Park", 21,10000,BankName.WOORI),
-                new Customer("Kim", 20,10000,BankName.IBK),
-                new Customer("Lee", 22,20000,BankName.SHINHAN)
-                );
+                new Customer("Park", 21, 10000, BankName.WOORI),
+                new Customer("Kim", 20, 10000, BankName.IBK),
+                new Customer("Lee", 22, 20000, BankName.SHINHAN)
+        );
         //고객 목록 저장
 
         manager.createBankSystemDB(customers);
 
         System.out.println("------------------소지금액------------------");
-        for(Customer customer : customers) {
-            System.out.println(customer.getName()+"님의 소지한 금액: "+customer.getWallet()+"원");
+        for (Customer customer : customers) {
+            System.out.println(customer.getName() + "님의 소지한 금액: " + customer.getWallet() + "원");
         }
         System.out.println();
         //입금
         System.out.println("------------------서비스 처리------------------");
-        manager.service(customers.get(0),Banking.DEPOSIT,10000); //park
-        manager.service(customers.get(1),Banking.WITHDRAW,10000); //kim
-        manager.service(customers.get(2),Banking.REMITTANCE,20000,customers.get(0)); //lee
-        manager.service(customers.get(2),Banking.DEPOSIT,20000);
-        manager.service(customers.get(2),Banking.CHECK); //lee
+        manager.service(customers.get(0), Banking.DEPOSIT, 10000); //park
+        manager.service(customers.get(1), Banking.WITHDRAW, 10000); //kim
+        manager.service(customers.get(2), Banking.REMITTANCE, 20000, customers.get(0)); //lee
+        manager.service(customers.get(2), Banking.DEPOSIT, 20000);
+        manager.service(customers.get(2), Banking.CHECK); //lee
         System.out.println();
 
         System.out.println("------------------정산------------------");
@@ -52,8 +52,8 @@ public class BankSimulator {
         System.out.println();
 
         System.out.println("------------------소지금액------------------");
-        for(Customer customer : customers) {
-            System.out.println(customer.getName()+"님의 소지한 금액: "+customer.getWallet()+"원");
+        for (Customer customer : customers) {
+            System.out.println(customer.getName() + "님의 소지한 금액: " + customer.getWallet() + "원");
         }
         System.out.println();
         System.out.println("영업 종료");

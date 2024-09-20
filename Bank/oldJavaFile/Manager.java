@@ -8,7 +8,7 @@ public class Manager extends BankSystem {
 //    private int age;
 //    private Banking service;
 
-    public void service(Customer customer, Banking service){
+    public void service(Customer customer, Banking service) {
         if (service == Banking.CHECK) {
             accounts.get(customer);
             System.out.println(customer.getName() + "님 계좌 조회 :" + super.accounts.get(customer) + "원입니다.");
@@ -38,11 +38,11 @@ public class Manager extends BankSystem {
     }
 
     //transactional
-    public void service(Customer customer, Banking service,int money,Customer target){
+    public void service(Customer customer, Banking service, int money, Customer target) {
         if (service == Banking.REMITTANCE) {
-            if(accounts.get(customer)<money) {
+            if (accounts.get(customer) < money) {
                 System.out.println("계좌에 금액이 부족하여 출금요청이 취소되었습니다.");
-            }else{
+            } else {
                 System.out.println(customer.getName() + "님이 " + target.getName() + "님께 " + money + "원 송금완료했습니다.");// 0번 한테 있는 돈 송금
                 accounts.put(target, accounts.get(target) + money); // 타겟에 입금
                 accounts.put(customer, accounts.get(customer) - money); // 본인계좌에서 이체

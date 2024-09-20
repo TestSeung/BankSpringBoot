@@ -1,18 +1,19 @@
 package Bank;
 
-public enum Banking {
-    DEPOSIT("입금"),
-    WITHDRAW("출금"),
-    REMITTANCE("송금"),
-    CHECK("조회");
+public enum BankName {
+    IBK("국민은행"),
+    SHINHAN("신한은행"),
+    HANA("하나은행"),
+    WOORI("우리은행");
 
     //instance 이다.
 
     private final String korean; //final로 정의
 
-    Banking(String korean) {
+    BankName(String korean) {
         this.korean = korean;
     }
+
     public String getKorean() {
         return korean;
     }
